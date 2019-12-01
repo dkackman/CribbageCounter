@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  h2 Instructions
+  div("style=margin-left:50px")
+    p Hand format is a comma separated list of 5 cards where:
+    ul
+      li each card consists of 2 characters: one for the card's value, one for its suit (case insensitive)
+      li values: <code>'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'</code>
+      li suits: <code>'S', 'H', 'C', 'D'</code>
+      li the 5th card is the cut card
+
+    p For example <code>5D,5C,5H,JS,5S</code> is this hand:
+    img.className#Perfect(src="/images/perfect.jpg" alt="Perfect Cribbage Hand" style="margin-left:25px")
+  
+  h2 Score a hand
+  div("style=margin-left:50px")
+    p Is crib 
+      input.chk#isCribCheckBox(type='checkbox' checked=false) 
+    input.text#handInputText(type="text" value="5D,5C,5H,JS,5S")
+    button.btn#getScoreButton(type="button" onclick='getScore()') Get Score
+    p.txt#restArgs
+    p.txt#score 
+    a(href="https://github.com/dkackman/cribbage-counter/issues") Please report miscounted hands

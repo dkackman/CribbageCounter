@@ -1,0 +1,28 @@
+{
+  "name": "cribbage",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "^2.0.4"
+  },
+  "description": "node service to count criabbage hands",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://dkackman.visualstudio.com/DefaultCollection/CribbageCounter/_git/CribbageCounter"
+  },
+  "author": "dkackman",
+  "license": "ISC"
+}
