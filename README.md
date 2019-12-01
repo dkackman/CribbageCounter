@@ -1,5 +1,5 @@
 # Introduction 
-A Node express app (with api) to score cribbage hands
+A Node REST service to score cribbage hands (becuase there isn't one already)
 
 https://cribbagecounter.azurewebsites.net/
 
