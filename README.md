@@ -1,5 +1,5 @@
 # Introduction 
-A Node REST service to score cribbage hands (becuase there isn't one already)
+A Node REST service to score cribbage hands (because there isn't one already)
 
 https://cribbagecounter.azurewebsites.net/
 
