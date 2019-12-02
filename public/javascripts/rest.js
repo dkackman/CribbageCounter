@@ -36,7 +36,18 @@ function explainScore()
         url: "/" + url,
         type: "GET",
         success: function(data) {
-            $("#score").text(data);            
+            $("#score").append("<p><b>" + data.score + "</b></p>");
+            data.points.forEach(function(item) {
+                var div = $("<div></div>");
+                var name = $("<span>" + item.name + " (</span>");
+                var cards = $("<span></span>");
+                item.cards.forEach(function(card) {
+                    cards.append("<span> " + card + " </span>");
+                })
+                var points = $("<span>) for " + item.points + "</span>");    
+                div.append(name, cards, points);
+                $("#score").append(div);
+            });
         },
         error: function(data) {
             console.log(data.status);
