@@ -36,7 +36,7 @@ function explainScore()
         url: "/" + url,
         type: "GET",
         success: function(data) {
-            $("#score").append("<p><b>" + data.score + "</b></p>");
+            $("#score").append("<p>" + data.score + "</p>");
             data.points.forEach(function(item) {
                 var div = $("<div></div>");
                 var name = $("<span>" + item.name + " (</span>");
