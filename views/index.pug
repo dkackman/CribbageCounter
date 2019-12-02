@@ -16,10 +16,11 @@ block content
   
   h2 Score a hand
   div("style=margin-left:50px")
-    p Is crib 
+    p crib hand
       input.chk#isCribCheckBox(type='checkbox' checked=false) 
     input.text#handInputText(type="text" value="5D,5C,5H,JS,5S")
-    button.btn#getScoreButton(type="button" onclick='getScore()') Get Score
+    button.btn#getScoreButton(type="button" onclick='getScore()') Score
+    button.btn#getScoreButton(type="button" onclick='explainScore()') Explain
     p.txt#restArgs
     p.txt#score 
     a(href="https://github.com/dkackman/cribbage-counter/issues") Please report miscounted hands

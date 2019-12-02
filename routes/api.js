@@ -11,16 +11,9 @@ router.get('/', function (req, res, next) {
 
 /* GET a hand's score */
 router.get('/score', function (req, res, next) {
-  var q = url.parse(req.originalUrl, true);
-  var query = q.query;
-  var hand = query.hand;
-  var isCrib = query.isCrib;
-
-  isCrib = (isCrib === 'true'); 
-
   try {
-    var s = score.scoreHand(hand, isCrib);
-    res.send(s.toString());
+    var o = getScore(req);
+    res.send(o.score.toString());
   }
   catch (err) {
     return res.status(400).end(err);
@@ -29,7 +22,26 @@ router.get('/score', function (req, res, next) {
 
 /* GET a hand's score and an explanation of the points */
 router.get('/explain', function (req, res, next) {
-  res.send("21 - that's a lot");
+  try {
+    var o = getScore(req);
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(o));
+  }
+  catch (err) {
+    return res.status(400).end(err);
+  }
 });
+
+function getScore(req)
+{
+  var q = url.parse(req.originalUrl, true);
+  var query = q.query;
+  var hand = query.hand;
+  var isCrib = query.isCrib;
+
+  isCrib = (isCrib === 'true'); 
+
+  return score.scoreHand(hand, isCrib);
+}
 
 module.exports = router;
