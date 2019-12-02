@@ -21,7 +21,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/dkackman/cribbage-counter.git"
+    "url": "https://github.com/dkackman/CribbageCounter.git"
   },
   "author": "dkackman",
   "license": "ISC"
