@@ -6,6 +6,7 @@ function getScore()
     url += "&isCrib=" + $("#isCribCheckBox").is(':checked');
 
     $("#restArgs").text(document.baseURI + url);
+    $("#restArgs").attr("href", document.baseURI + url);
     $.ajax({
         url: "/" + url,
         type: "GET",
@@ -32,6 +33,7 @@ function explainScore()
     url += "&isCrib=" + $("#isCribCheckBox").is(':checked');
 
     $("#restArgs").text(document.baseURI + url);
+    $("#restArgs").attr("href", document.baseURI + url);
     $.ajax({
         url: "/" + url,
         type: "GET",
