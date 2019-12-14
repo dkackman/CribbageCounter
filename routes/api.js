@@ -39,9 +39,7 @@ function getScore(req)
   var hand = query.hand;
   var isCrib = query.isCrib;
 
-  isCrib = (isCrib === 'true'); 
-
-  return score.scoreHand(hand, isCrib);
+  return score.scoreHand(hand, isCrib === 'true');
 }
 
 module.exports = router;
