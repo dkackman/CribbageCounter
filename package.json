@@ -18,7 +18,9 @@
   "directories": {
     "lib": "lib"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dkackman/CribbageCounter.git"
