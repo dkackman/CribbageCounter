@@ -36,10 +36,8 @@ function getScore(req)
 {
   var q = url.parse(req.originalUrl, true);
   var query = q.query;
-  var hand = query.hand;
-  var isCrib = query.isCrib;
 
-  return score.scoreHand(hand, isCrib === 'true');
+  return score.scoreHand(query.hand, query.isCrib === 'true');
 }
 
 module.exports = router;
