@@ -1,4 +1,5 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/f6a3571f-bae8-45db-b27e-b1a85d1c4bf0/resourceGroups/cribbageGroup/providers/Microsoft.Web/sites/CribbageCounter",
-    "appService.deploySubpath": ""
+    "appService.deploySubpath": "",
+    "appService.showBuildDuringDeployPrompt": false
 }
