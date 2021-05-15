@@ -1,8 +1,7 @@
-function getScore()
-{
+function getScore() {
     $("#score").html("");
-    
-    var url =  "api/score?hand=" + $("#handInputText").val();
+
+    let url = "api/score?hand=" + $("#handInputText").val();
     url += "&isCrib=" + $("#isCribCheckBox").is(':checked');
 
     $("#restArgs").text(document.baseURI + url);
@@ -10,10 +9,10 @@ function getScore()
     $.ajax({
         url: "/" + url,
         type: "GET",
-        success: function(data) {
-            $("#score").text(data);            
+        success: function (data) {
+            $("#score").text(data);
         },
-        error: function(data) {
+        error: function (data) {
             console.log(data.status);
             if (data.status == "400") {
                 $("#score").text(data.responseText);
@@ -25,11 +24,10 @@ function getScore()
     });
 }
 
-function explainScore()
-{
+function explainScore() {
     $("#score").html("");
-    
-    var url =  "api/explain?hand=" + $("#handInputText").val();
+
+    let url = "api/explain?hand=" + $("#handInputText").val();
     url += "&isCrib=" + $("#isCribCheckBox").is(':checked');
 
     $("#restArgs").text(document.baseURI + url);
@@ -37,21 +35,21 @@ function explainScore()
     $.ajax({
         url: "/" + url,
         type: "GET",
-        success: function(data) {
+        success: function (data) {
             $("#score").append("<p>" + data.score + "</p>");
-            data.points.forEach(function(item) {
-                var div = $("<div></div>");
-                var name = $("<span>" + item.name + " (</span>");
-                var cards = $("<span></span>");
-                item.cards.forEach(function(card) {
+            data.points.forEach(function (item) {
+                const div = $("<div></div>");
+                const name = $("<span>" + item.name + " (</span>");
+                const cards = $("<span></span>");
+                item.cards.forEach(function (card) {
                     cards.append("<span> " + card + " </span>");
                 })
-                var points = $("<span>) for " + item.points + "</span>");    
+                const points = $("<span>) for " + item.points + "</span>");
                 div.append(name, cards, points);
                 $("#score").append(div);
             });
         },
-        error: function(data) {
+        error: function (data) {
             console.log(data.status);
             if (data.status == "400") {
                 $("#score").text(data.responseText);

@@ -1,8 +1,8 @@
-var express = require('express');
-var url = require("url");
+const express = require('express');
+const url = require("url");
 const score = require('../lib/score.js');
 
-var router = express.Router();
+const router = express.Router();
 
 /* GET api root */
 router.get('/', function (req, res, next) {
@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 /* GET a hand's score */
 router.get('/score', function (req, res, next) {
   try {
-    var o = getScore(req);
+    const o = getScore(req);
     res.send(o.score.toString());
   }
   catch (err) {
@@ -23,7 +23,7 @@ router.get('/score', function (req, res, next) {
 /* GET a hand's score and an explanation of the points */
 router.get('/explain', function (req, res, next) {
   try {
-    var o = getScore(req);
+    const o = getScore(req);
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(o));
   }
@@ -32,10 +32,9 @@ router.get('/explain', function (req, res, next) {
   }
 });
 
-function getScore(req)
-{
-  var q = url.parse(req.originalUrl, true);
-  var query = q.query;
+function getScore(req) {
+  const q = url.parse(req.originalUrl, true);
+  const query = q.query;
 
   return score.scoreHand(query.hand, query.isCrib === 'true');
 }
