@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/dkackman/CribbageCounter/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/dkackman/CribbageCounter/actions/workflows/codeql-analysis.yml)
+
 # Introduction 
 A Node REST service to score cribbage hands (because there isn't one already)
 
