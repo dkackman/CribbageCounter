@@ -13,6 +13,7 @@ router.get('/', function (req, res, next) {
 router.get('/score', function (req, res, next) {
   try {
     const o = getScore(req);
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
     res.send(o.score.toString());
   }
   catch (err) {
