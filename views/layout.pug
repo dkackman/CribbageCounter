@@ -1,11 +1,15 @@
 doctype html
-html
+html(lang="en")
   head
     title= title
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    meta(charset="UTF-8")
     meta(name="app-version" content="1.02")
     meta(name="description" content="A simple interface (and api) to calculate the score of any cribbage hand. No fuss! No muss!")
     link(rel="stylesheet", href="/stylesheets/style.css")
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
     script(src="/javascripts/rest.js")
   body
     block content
