@@ -38,7 +38,7 @@ function getScore(req) {
   const q = url.parse(req.originalUrl, true);
   const query = q.query;
 
-  return score.scoreHand(query.hand, query.isCrib === 'true');
+  return score.scoreHand(query.hand, query.isCrib.toLowerCase() === 'true');
 }
 
 module.exports = router;
