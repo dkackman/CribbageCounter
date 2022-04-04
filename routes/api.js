@@ -18,7 +18,7 @@ router.get('/score', function (req, res, next) {
     res.send(o.score.toString());
   }
   catch (err) {
-    return res.status(400).end(err);
+    return res.status(500).end("an error occured");
   }
 });
 
@@ -30,7 +30,7 @@ router.get('/explain', function (req, res, next) {
     res.end(JSON.stringify(o));
   }
   catch (err) {
-    return res.status(400).end(err);
+    return res.status(500).end("an error occurred");
   }
 });
 
