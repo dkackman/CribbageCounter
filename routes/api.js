@@ -6,6 +6,7 @@ const router = express.Router();
 
 /* GET api root */
 router.get('/', function (req, res, next) {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
   res.send('This is the api root. Not much to see here. Try score or explain.');
 });
 
@@ -25,7 +26,7 @@ router.get('/score', function (req, res, next) {
 router.get('/explain', function (req, res, next) {
   try {
     const o = getScore(req);
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.end(JSON.stringify(o));
   }
   catch (err) {
