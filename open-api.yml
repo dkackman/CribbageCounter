@@ -1,7 +1,17 @@
 openapi: "3.0.2"
 info:
   title: Cribbbage Counter
-  description: REST API for all of your cribbage hand counting needs
+  description: >
+    REST API for all of your cribbage hand counting needs
+    Hand format is a comma separated list of 5 cards where:
+
+    - each card consists of 2 characters: one for the card's rank, one for its suit (case insensitive)
+    
+    - ranks: 'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'
+    
+    - suits: 'S', 'H', 'C', 'D'
+    
+    - the 5th card is the cut card
   version: "1.0"
   contact:
     name: dkackman
@@ -26,6 +36,8 @@ components:
         minItems: 5
         maxItems: 5
         uniqueItems: true
+      style: "form"
+      explode: false
     isCrib:
       in: query
       name: isCrib
@@ -78,6 +90,8 @@ paths:
                           description: An arrary of cards in this ocmbination
                           items:
                             type: string
+                            minLength: 2
+                            maxLength: 2
                         points:
                           type: integer
                           description: The number of points for this combination
