@@ -2,8 +2,7 @@ openapi: "3.0.2"
 info:
   title: Cribbbage Counter
   description: >
-    REST API for all of your cribbage hand counting needs
-    Hand format is a comma separated list of 5 cards where:
+    A REST API for all of your cribbage hand counting needs. Hand format is a comma separated list of 5 cards where:
 
     - each card consists of 2 characters: one for the card's rank, one for its suit (case insensitive)
     
@@ -87,11 +86,12 @@ paths:
                           type: string
                         cards:
                           type: array
-                          description: An arrary of cards in this ocmbination
+                          description: An arrary of cards in this combination
                           items:
                             type: string
                             minLength: 2
                             maxLength: 2
+                          minItems: 1
                         points:
                           type: integer
                           description: The number of points for this combination
