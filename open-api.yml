@@ -1,0 +1,86 @@
+openapi: "3.0.2"
+info:
+  title: Cribbbage Counter
+  description: REST API for all of your cribbage hand counting needs
+  version: "1.0"
+  contact:
+    name: dkackman
+    url: https://kackman.net
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: https://cribbagecounter.kackman.net/api
+components:
+  parameters:
+    hand:
+      in: query
+      name: hand
+      description: An array of cards 
+      schema:
+        type: array
+        items:
+          type: string
+          minLength: 2
+          maxLength: 2
+        minItems: 5
+        maxItems: 5
+        uniqueItems: true
+    isCrib:
+      in: query
+      name: isCrib
+      description: Is this the crib hand (used for flushes) 
+      schema:
+        type: boolean
+        default: false      
+paths:
+  /score:
+    get:
+      description: Retrieves a hand's score
+      operationId: score
+      parameters:
+        - $ref: "#/components/parameters/hand"
+        - $ref: "#/components/parameters/isCrib"
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: integer
+                example: 29
+  /explain:
+    get:
+      description: Retrieves a hand's score and all scoring card combinations
+      operationId: explain
+      parameters:
+        - $ref: "#/components/parameters/hand"
+        - $ref: "#/components/parameters/isCrib"      
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  points:
+                    description: An array of all scoring card combinations
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          description: The name of the combination
+                          type: string
+                        cards:
+                          type: array
+                          description: An arrary of cards in this ocmbination
+                          items:
+                            type: string
+                        points:
+                          type: integer
+                          description: The number of points for this combination
+                  score:
+                    description: The total score for the hand
+                    type: integer
