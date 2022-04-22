@@ -13,6 +13,13 @@
                 "kind": "build",
                 "isDefault": true
             }
-        }
+        },
+        {
+            "label": "docs",
+            "type": "shell",
+            "command": "npx",
+            "args": ["redoc-cli", "build", "${workspaceFolder}/open-api.yml", "--output", "${workspaceFolder}/docs/index.html"],
+            "problemMatcher": []
+        },
     ]
 }

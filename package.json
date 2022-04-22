@@ -16,10 +16,11 @@
   "description": "node service to count criabbage hands",
   "main": "app.js",
   "directories": {
-    "lib": "lib"
+    "cribbage-counter": "cribbage-counter"
   },
   "devDependencies": {
-    "eslint": "^8.1.0"
+    "eslint": "^8.1.0",
+    "redoc-cli": "^0.13.10"
   },
   "repository": {
     "type": "git",

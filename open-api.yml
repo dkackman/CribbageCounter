@@ -1,4 +1,4 @@
-openapi: "3.0.2"
+openapi: 3.0.2
 info:
   title: Cribbbage Counter
   description: >
@@ -11,7 +11,7 @@ info:
     - suits: 'S', 'H', 'C', 'D'
     
     - the 5th card is the cut card
-  version: "1.0"
+  version: 1.0.0
   contact:
     name: dkackman
     url: https://kackman.net

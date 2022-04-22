@@ -1,6 +1,6 @@
 const express = require('express');
 const url = require("url");
-const score = require('../lib/score.js');
+const cribbageCounter = require('../cribbage-counter/index.js');
 
 const router = express.Router();
 
@@ -38,7 +38,7 @@ function getScore(req) {
   const q = url.parse(req.originalUrl, true);
   const query = q.query;
 
-  return score.scoreHand(query.hand, query.isCrib.toLowerCase() === 'true');
+  return cribbageCounter.scoreHand(query.hand, query.isCrib.toLowerCase() === 'true');
 }
 
 module.exports = router;

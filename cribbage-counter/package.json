@@ -1,0 +1,23 @@
+{
+  "name": "cribbage-counter",
+  "version": "1.0.0",
+  "description": "Count the points in a cribbage hand",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkackman/CribbageCounter.git"
+  },
+  "keywords": [
+    "cribbage"
+  ],
+  "author": "dkackman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkackman/CribbageCounter/issues"
+  },
+  "homepage": "https://cribbagecounter.kackman.net",
+  "readme": "https://github.com/dkackman/CribbageCounter#readme"
+}

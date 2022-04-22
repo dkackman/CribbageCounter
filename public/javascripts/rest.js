@@ -51,7 +51,7 @@ function explainScore() {
         },
         error: function (data) {
             console.log(data.status);
-            if (data.status == "400") {
+            if (data.status == "500") {
                 $("#score").text(data.responseText);
             }
             else {
