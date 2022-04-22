@@ -1,6 +1,6 @@
 const express = require('express');
 const url = require("url");
-const cribbageCounter = require('../cribbage-counter/index.js');
+const cribbageCounter = require('cribbage-counter');
 
 const router = express.Router();
 
