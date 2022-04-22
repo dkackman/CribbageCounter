@@ -11,6 +11,10 @@ info:
     - suits: 'S', 'H', 'C', 'D'
     
     - the 5th card is the cut card
+
+
+    [Test front end](https://cribbagecounter.kackman.net/)
+    
   version: 1.0.0
   contact:
     name: dkackman
