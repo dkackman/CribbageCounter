@@ -1,6 +1,6 @@
 # Introduction
 
-A Node REST service to score cribbage hands (because there isn't one already)
+A package to score cribbage hands
 
 ## API Spec
 
@@ -9,6 +9,20 @@ A Node REST service to score cribbage hands (because there isn't one already)
 ## Test Front End
 
 <https://cribbagecounter.kackman.net/>
+
+## Example
+
+```javascript
+const cribbageCounter = require('cribbage-counter');
+
+const core = cribbageCounter.scoreHand('5D,5C,5H,JS,5S', false);
+console.log(score); 
+// 29
+
+const explanation = cribbageCounter.scoreHand('9D,9C,4H,8S,5S', false);
+console.log(explanation); 
+//{"points":[{"name":"Pair","cards":["9D","9C"],"points":2}],"score":2}
+```
 
 ## REST Examples
 

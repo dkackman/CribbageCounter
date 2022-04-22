@@ -1,6 +1,6 @@
 {
   "name": "cribbage-counter",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Count the points in a cribbage hand",
   "main": "index.js",
   "scripts": {
