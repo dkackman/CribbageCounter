@@ -1,6 +1,6 @@
 {
   "name": "cribbage-counter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Count the points in a cribbage hand",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "cribbage"
   ],
   "author": "dkackman",
-  "license": "ISC",
+  "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/dkackman/CribbageCounter/issues"
   },
