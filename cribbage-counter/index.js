@@ -9,7 +9,7 @@ module.exports.scoreHand = function (hand, isCrib) {
     const cards = [];
     for (let i = 0; i < 5; i++) {
         const c = fullHand[i];
-        if (!isValid(c)) throw '[' + c + '] is not a valid card';
+        if (!isValid(c)) throw `[${c}] is not a valid card`;
 
         const card = {};
         card.display = c;
