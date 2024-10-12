@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "eslint": "^8.1.0",
-    "redoc-cli": "^0.13.10"
+    "redoc-cli": "^0.13.21"
   },
   "repository": {
     "type": "git",
